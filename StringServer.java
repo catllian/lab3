@@ -1,10 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-
 import java.io.IOException;
 import java.net.URI;
-
-    ArrayList<String> str = new ArrayList<>();
 
 class Handler {
 
@@ -14,10 +9,7 @@ class Handler {
         }
         else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
-            str.add(parameters[1]);
-            for (int i = 0; i < str.size(); i++) {
-                System.out.println("\n" + str.get(i));
-            }
+            System.out.println("\n" + parameters[1]);
             return null;
         }
         else {
