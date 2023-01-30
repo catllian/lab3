@@ -4,7 +4,7 @@ import java.util.List;
 import java.io.IOException;
 import java.net.URI;
 
-String[] stringList;
+    String[] str;
 
 class Handler {
 
@@ -14,9 +14,9 @@ class Handler {
         }
         else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
-            stringList.add(parameters[1]);
-            for (int i = 0; i < stringList.length; i++) {
-                System.out.println("\n" + stringList[i]);
+            str[str.length-1] = parameters[1];
+            for (int i = 0; i < str.length; i++) {
+                System.out.println("\n" + str[i]);
             }
         }
         else {
