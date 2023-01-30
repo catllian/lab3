@@ -4,7 +4,7 @@ import java.util.List;
 import java.io.IOException;
 import java.net.URI;
 
-    String[] str;
+    ArrayList<String> str = new ArrayList<>();
 
 class Handler {
 
@@ -14,10 +14,11 @@ class Handler {
         }
         else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
-            str[str.length-1] = parameters[1];
-            for (int i = 0; i < str.length; i++) {
-                System.out.println("\n" + str[i]);
+            str.add(parameters[1]);
+            for (int i = 0; i < str.size(); i++) {
+                System.out.println("\n" + str.get(i));
             }
+            return null;
         }
         else {
             return "404 Not Found!";
