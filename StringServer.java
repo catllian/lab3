@@ -9,7 +9,7 @@ class Handler {
         }
         else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
-            System.out.println("\n" + parameters[1]);
+            System.out.print("\n" + parameters[1]);
             return null;
         }
         else {
