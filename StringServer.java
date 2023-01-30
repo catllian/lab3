@@ -12,20 +12,15 @@ class Handler {
         if (url.getPath().equals("/")) {
             return null;
         }
-        else if (url.getPath().contains("/add")) {
+        else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
             stringList.add(parameters[1]);
-            return null;
-        }
-        else if (url.getPath().contains("/search")) {
-            String[] returnList;
-            String[] parameters = url.getQuery().split("=");
             for (int i = 0; i < stringList.length; i++) {
-                if (stringList[i].contains(parameters[1])) {
-                    returnList.add(stringList[i]);
-                }
+                System.out.println("\n" + stringList[i]);
             }
-            return returnList;
+        }
+        else {
+            return "404 Not Found!";
         }
     }
 }
