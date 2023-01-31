@@ -5,12 +5,11 @@ class Handler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            return null;
+            return "";
         }
         else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
-            System.out.print("\n" + parameters[1]);
-            return null;
+            return String.format(parameters[1] + "\n");
         }
         else {
             return "404 Not Found!";
