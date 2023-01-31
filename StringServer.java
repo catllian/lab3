@@ -16,9 +16,11 @@ class Handler {
             return "404 Not Found!";
         }
     }
+
 }
 
-class SearchEngine {
+class StringServer {
+
     public static void main (String[] args) throws IOException {
         if(args.length == 0){
             System.out.println("Missing port number! Try an number between 1024 to 49151");
@@ -29,4 +31,5 @@ class SearchEngine {
 
         Server.start(port, new Handler());
     }
+
 }
