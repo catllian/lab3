@@ -3,13 +3,16 @@ import java.net.URI;
 
 class Handler implements URLHandler {
 
+    String strTotal = "";
+
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return "";
         }
         else if (url.getPath().contains("/add-message")) {
             String[] parameters = url.getQuery().split("=");
-            return String.format(parameters[1] + "\n");
+            strTotal = strTotal + parameters[1] + "\n";
+            return String.format(strTotal);
         }
         else {
             return "404 Not Found!";
